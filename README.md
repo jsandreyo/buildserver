@@ -92,10 +92,10 @@ To specify a .git or .zip URL (w/ default mode and interval):
 
 e.g.
 ```
+python -u buildserver_mod.py --url https://github.com/jsandreyo/repo_a/hello8.zip
+```
+```
 python -u buildserver_mod.py --url https://github.com/jsandreyo/repo_b.git
-```
-```
-python -u buildserver_mod.py --url https://github.com/jsandreyo/repo_b/hello1.zip
 ```
 
 **Auto Mode**: will process a given or assumed remote Git resource every x number of seconds.
