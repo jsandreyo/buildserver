@@ -1,0 +1,30 @@
+######################################################
+## Author: John Andreyo
+## Copyright: Copyright (c) 2024. All rights reserved.
+## License: Please see LICENSE file in program's root.
+## Version: 2.0
+######################################################
+
+version: "3.4"
+
+services:
+  buildserver_svc:
+    container_name: buildserver_con
+    image: buildserver_img
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+    #command: sh -c "sleep 20s ; python3 ./buildserver_mod.py"
+    restart: no
+    environment:
+      MYSQL_ROOT_PASSWORD: "D3v0p$2"
+    ports: # opens ports into container
+      - "5000:5000"
+      - "5002:5002"
+      - "3306:3306"
+      - "33060:33060"
+    expose: # opens ports within container
+      - "5000"
+      - "5002"
+      - "3306"
+      - "33060"

@@ -1,0 +1,40 @@
+{
+  "configurations": [
+    {
+      "name": "Python: Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "args": [],
+      "justMyCode": true
+    }
+  ]
+}
+
+// {
+//   "version": "0.2.0",
+//   "configurations": [
+//     {
+//         "name": "Debug Flask App",
+//         "type": "docker",
+//         "request": "launch",
+//         "terminal": "external",
+//         "preLaunchTask": "docker-run: debug",
+//         "python": {
+//           "pathMappings": [
+//             {
+//               "localRoot": "${workspaceFolder}",
+//               "remoteRoot": "/app"
+//             }
+//           ],
+//           "projectType": "flask"
+//         },
+//         "dockerServerReadyAction": {
+//           "action": "openExternally",
+//           "pattern": "Running on (http?://\\S+|[0-9]+)",
+//           "uriFormat": "%s://localhost:%s/"
+//         }  
+//     }
+//   ]
+// }

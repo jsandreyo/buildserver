@@ -1,0 +1,42 @@
+{
+    "files.associations": {
+        "iostream": "c",
+        "string": "c",
+        "hello.h": "c",
+        "cstdlib": "c",
+        "random": "c",
+        "system_error": "c"
+    },
+    "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
+    "editor.scrollbar.horizontalScrollbarSize": 14,
+    "editor.scrollbar.vertical": "visible",
+    "editor.scrollbar.verticalScrollbarSize": 14,
+    "workbench.editor.titleScrollbarSizing": "large",
+    "editor.scrollbar.horizontal": "auto",
+    "editor.fontSize": 14,
+    "cSpell.words": [
+        "crsr",
+        "gmtime",
+        "gunicorn",
+        "hexsha",
+        "levelname",
+        "longhash",
+        "mysqld",
+        "postbuild",
+        "prebuild",
+        "pymysql",
+        "PYTHONDONTWRITEBYTECODE",
+        "PYTHONUNBUFFERED",
+        "regid",
+        "revparse"
+    ],
+    "cSpell.enableFiletypes": [
+        "dockerfile",
+        "shellscript"
+    ],
+    "cSpell.ignoreWords": [
+        "initdb"
+    ],
+    "git.autoRepositoryDetection": false,
+    "cSpell.enabled": true
+}

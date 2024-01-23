@@ -1,0 +1,35 @@
+<!-------------------------------------------------------
+-- Author: John Andreyo
+-- Copyright: Copyright (c) 2024. All rights reserved.
+-- License: Please see LICENSE file in program's root.
+-- Version: 2.0
+--------------------------------------------------------->
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>C Program Build Server</title>
+        <meta charset="utf-8" http-equiv="refresh" content="5">
+        <link rel="stylesheet" type="text/css" href="/static/style.css">
+    </head>
+    <body>
+        <h1>C Program Build Server</h1>
+        <p>This application autonomously builds
+        and registers qualified C programs that 
+        exist as zipped Git commits on a remote 
+        host and are accessible via a URL.  Binaries 
+        are persisted to the database as a BLOB.
+        </p>
+        <table style="width:100%">
+            <tr>   
+            <th>BUILD REQUEST ID</th>
+            <th>COMMIT ID</th>
+            <th>PROGRAM NAME</th>
+            <th>STATUS</th>
+            <th>REGISTRATION ID</th>
+            </tr>
+            <div>{content:}</div>
+        </table>
+    </body>
+</html>

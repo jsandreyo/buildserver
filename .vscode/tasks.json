@@ -1,0 +1,48 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+          "type": "docker-run",
+          "label": "docker-run: debug",
+          "dependsOn": ["docker-build"],    
+          "dockerRun": {
+              "containerName": "buildserver",
+              "image": "buildserver:latest",
+              "env": {
+                  //"FLASK_APP": "${workspaceRoot}/buildserver_mod.py",
+                  //"FLASK_ENV": "production",
+                  "FLASK_ENV": "development",
+                  //"FLASK_DEBUG": "True"
+              },
+              "volumes": [
+                  {
+                  "containerPath": "/app",
+                  "localPath": "${workspaceFolder}"
+                  }
+              ],
+              "ports": [
+                  {
+                  "containerPort": 5000,
+                  "hostPort": 5000
+                  }
+              ]
+          },
+          "python": {
+              "args": ["run", "--host", "0.0.0.0", "--port", "5000"],
+              // "file": "buildserver_mod.py",
+              "module": "flask"
+          }
+      },
+      {
+          "type": "docker-build",
+          "label": "docker-build",
+          "platform": "python",
+          "dockerBuild": {
+              "context": "${workspaceFolder}",
+              "dockerfile": "${workspaceFolder}/Dockerfile",
+              "pull": true,
+              "tag": "buildserver:latest"
+          }
+      }
+    ]
+  }
