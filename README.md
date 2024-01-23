@@ -113,7 +113,7 @@ python -u buildserver_mod.py --url https://github.com/jsandreyo/repo_b/hello1.zi
 - https://github.com/jsandreyo/repo_b.git is default remote Git resource.  To reconfigure this default value, edit global **DEFAULT_GIT_REPO_URL** constant in **g_.py**.
 
 - 180 seconds (3 minutes) is default interval for continuous build cycles.  To reconfigure this default value, edit global **DEFAULT_INTERVAL_SECONDS** constant in **g_.py**
-\
+
 
 ##
 
