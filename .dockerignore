@@ -29,3 +29,7 @@
 **/error-logs/*
 **/output-logs/*
 *.pptx
+*.pdf
+**/deploy-buildserver.sh
+**/container-demo-script.sh
+**/run_demo.sh

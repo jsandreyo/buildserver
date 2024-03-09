@@ -2,7 +2,7 @@
 ## Author: John Andreyo
 ## Copyright: Copyright (c) 2024. All rights reserved.
 ## License: Please see LICENSE file in program's root.
-## Version: 2.0
+## Version: 2.1
 ######################################################
 
 version: "3.4"
@@ -20,11 +20,9 @@ services:
       MYSQL_ROOT_PASSWORD: "D3v0p$2"
     ports: # opens ports into container
       - "5000:5000"
-      - "5002:5002"
       - "3306:3306"
       - "33060:33060"
     expose: # opens ports within container
       - "5000"
-      - "5002"
       - "3306"
       - "33060"

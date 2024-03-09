@@ -16,11 +16,16 @@
     "editor.fontSize": 14,
     "cSpell.words": [
         "crsr",
+        "dockerhub",
         "gmtime",
         "gunicorn",
         "hexsha",
+        "hostbrowserpipe",
+        "jsandreyo",
         "levelname",
         "longhash",
+        "mkfifo",
+        "mysqladmin",
         "mysqld",
         "postbuild",
         "prebuild",
@@ -28,7 +33,8 @@
         "PYTHONDONTWRITEBYTECODE",
         "PYTHONUNBUFFERED",
         "regid",
-        "revparse"
+        "revparse",
+        "tmpdir"
     ],
     "cSpell.enableFiletypes": [
         "dockerfile",

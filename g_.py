@@ -2,24 +2,13 @@
 ## Author: John Andreyo
 ## Copyright: Copyright (c) 2024. All rights reserved.
 ## License: Please see LICENSE file in program's root.
-## Version: 2.0
+## Version: 2.1
 ######################################################
 
 """ GLOBAL CONSTANTS """
 
 import os
-from logs_handler import LogsHandler
-
-##################################################################################
-# UTILITIES
-
-def create_working_dir(working_dir):
-    """ top level utility for dynamically creating needed set of empty working 
-    directories, as they are not able to be committed to Git without placeholder
-    files which would otherwise interfere with this application's file operations. 
-    """
-    if not os.path.exists(working_dir):
-        os.makedirs(working_dir)
+from utilities import Utilities
 
 ##################################################################################
 # DIRECTORIES
@@ -29,8 +18,8 @@ PROJ_ROOT_PATH = ""
 ZIP_FILE_DIR_NAME = "c_programs_zip"
 SRC_CODE_DIR_NAME = "c_programs_src"
 
-create_working_dir(ZIP_FILE_DIR_NAME)
-create_working_dir(SRC_CODE_DIR_NAME)
+Utilities.create_working_dir(ZIP_FILE_DIR_NAME)
+Utilities.create_working_dir(SRC_CODE_DIR_NAME)
 
 ZIP_FILE_DIR = f"./{ZIP_FILE_DIR_NAME}"
 SRC_CODE_DIR = f"./{SRC_CODE_DIR_NAME}"
@@ -44,8 +33,8 @@ SRC_CODE_DIR_PATH = os.path.join(PROJ_ROOT_PATH, SRC_CODE_DIR_NAME)
 ERROR_LOGS_DIR_NAME = "error-logs"
 OUTPUT_LOGS_DIR_NAME = "output-logs"
 
-create_working_dir(ERROR_LOGS_DIR_NAME)
-create_working_dir(OUTPUT_LOGS_DIR_NAME)
+Utilities.create_working_dir(ERROR_LOGS_DIR_NAME)
+Utilities.create_working_dir(OUTPUT_LOGS_DIR_NAME)
 
 ERROR_LOGS_DIR = f"./{ERROR_LOGS_DIR_NAME}"
 OUTPUT_LOGS_DIR = f"./{OUTPUT_LOGS_DIR_NAME}"
@@ -64,12 +53,14 @@ DB_ERR_LOG_FILE_PATH = os.path.join(ERROR_LOGS_DIR, DB_ERR_LOG_FILE_NAME)
 WEB_OUT_LOG_FILE_PATH = os.path.join(OUTPUT_LOGS_DIR, WEB_OUT_LOG_FILE_NAME)
 APP_OUT_LOG_FILE_PATH = os.path.join(OUTPUT_LOGS_DIR, APP_OUT_LOG_FILE_NAME)
 
-ZIP_LOGGER = LogsHandler.get_logger("ZipManager", ZIP_ERR_LOG_FILE_PATH, "INFO")
-GIT_LOGGER = LogsHandler.get_logger("GitManager", GIT_ERR_LOG_FILE_PATH, "INFO")
-GCC_LOGGER = LogsHandler.get_logger("GCCManager", GCC_ERR_LOG_FILE_PATH, "INFO")
-DB_LOGGER = LogsHandler.get_logger("DBManager", DB_ERR_LOG_FILE_PATH, "INFO")
-WEB_LOGGER = LogsHandler.get_logger("WebLogger", WEB_OUT_LOG_FILE_PATH, "INFO")
-APP_LOGGER = LogsHandler.get_logger("AppLogger", APP_OUT_LOG_FILE_PATH, "INFO")
+LOG_FORMAT = "[%(asctime)s] %(name)s %(levelname)s %(message)s"
+
+ZIP_LOGGER = Utilities.get_logger("ZipManager", ZIP_ERR_LOG_FILE_PATH, "INFO", LOG_FORMAT)
+GIT_LOGGER = Utilities.get_logger("GitManager", GIT_ERR_LOG_FILE_PATH, "INFO", LOG_FORMAT)
+GCC_LOGGER = Utilities.get_logger("GCCManager", GCC_ERR_LOG_FILE_PATH, "INFO", LOG_FORMAT)
+DB_LOGGER = Utilities.get_logger("DBManager", DB_ERR_LOG_FILE_PATH, "INFO", LOG_FORMAT)
+WEB_LOGGER = Utilities.get_logger("WebLogger", WEB_OUT_LOG_FILE_PATH, "INFO", LOG_FORMAT)
+APP_LOGGER = Utilities.get_logger("AppLogger", APP_OUT_LOG_FILE_PATH, "INFO", LOG_FORMAT)
 
 ##################################################################################
 # STATUSES
