@@ -139,4 +139,4 @@ python -u buildserver_mod.py --url https://github.com/jsandreyo/repo_b.git
 Author: John Andreyo \
 Copyright: Copyright (c) 2024. All rights reserved. \
 License: Please see LICENSE file in project's root. \
-Version: 2.0
+Version: 2.1
